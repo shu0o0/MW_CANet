@@ -69,7 +69,7 @@ class CCNN2(nn.Module):
         return holophase
 
 
-class ccnncgh(nn.Module):
+class MW_CANet(nn.Module):
     def __init__(self):
         super().__init__()
         # self.ccnn1 = CCNN1()
