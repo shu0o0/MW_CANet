@@ -158,7 +158,7 @@ for k in trange(num):
                 b = '4\\' + method + str(c)
                 imgpath = './results/'+b + '.png'
                 cv2.imwrite(imgpath, holo)
-    if k % 10 == 0:
+    if (k+1) % 10 == 0:
         torch.save(net.state_dict(), './checkpoint/'+method+'{}.pth'.format(k))
 
     l.append(currentloss / validnum)
