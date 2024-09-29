@@ -21,7 +21,7 @@ z = 250
 # interval = 10
 slm_res = (n, m)
 pad = False
-method = 'ccnncgh'
+method = 'MW_CANet'
 # method='holonet'
 # method='holoencoder'
 
@@ -32,8 +32,8 @@ Hforward = propagation_ASM(torch.empty(1, 1, n, m), feature_size=[pitch, pitch],
 Hbackward = Hbackward.cuda()
 Hforward = Hforward.cuda()
 lr = 0.001
-if method == 'ccnncgh':
-    net = model.ccnncgh()
+if method == 'MW_CANet':
+    net = model.MW_CANet()
 
 criterion = nn.MSELoss()
 net = net.cuda()
