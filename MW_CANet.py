@@ -82,7 +82,7 @@ class Down(nn.Module):
         # print(yl_cat.shape)
         yl_db = self.dense1(yl_cat)
         # Dense Block + CAB
-        yh_cat = torch.cat((lh, hl, hh), dim=1)
+        yh_cat = torch.cat([lh, hl, hh], dim=1)
         # print(yh_cat.shape)
         yh_cab = self.cab2(yh_cat)
         yh_db = self.dense2(yh_cab)
@@ -112,7 +112,7 @@ class Up(nn.Module):
 
 # Overall Network Structure integrating CAB and DenseBlock
 class MW_CANet(nn.Module):
-    def __init__(self, in_channels=1, channels=64):
+    def __init__(self, in_channels=1, channels=10):
         super(MW_CANet, self).__init__()
         # Initial Conv layer
         self.conv_in = nn.Conv2d(in_channels, channels, kernel_size=1, padding=0)
