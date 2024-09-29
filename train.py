@@ -8,7 +8,7 @@ import model
 from propagation_ASM import *
 import tools
 
-# mm为单位
+# unit is mm
 num = 50
 trainnum = 700
 validnum = 100
